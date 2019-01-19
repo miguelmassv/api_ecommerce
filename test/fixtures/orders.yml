@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id               :bigint(8)        not null, primary key
+#  user_id          :bigint(8)
+#  payment_method   :integer
+#  shipping_address :string
+#  phone_number     :string
+#  restaurant_id    :bigint(8)
+#  status           :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  payment_method: 1
+  shipping_address: MyString
+  phone_number: MyString
+  restaurant: one
+  status: 1
+
+two:
+  user: two
+  payment_method: 1
+  shipping_address: MyString
+  phone_number: MyString
+  restaurant: two
+  status: 1
