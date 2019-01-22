@@ -7,4 +7,6 @@ Servicio para traer la información del carrito de un cliente (que productos tie
 Servicio para realizar la orden en el que se especifique el medio de pago, dirección del cliente y celular (los medios de pago son ficticios no se requiere ningún lógica detrás de un medio de pago)
 Servicio para listar las ordenes hechas por un usuario
 
-Check documentation in https://miguelmassv.github.io/documentation_api_ecommerce_enlau/
+Check documentation for Rspec tests in https://miguelmassv.github.io/documentation_api_ecommerce_enlau/
+Check documentation for Postman tests in https://documenter.getpostman.com/view/3875340/RztfuWoL
+
