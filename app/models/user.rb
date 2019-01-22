@@ -11,11 +11,15 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  shipping_address       :string
+#  authentication_token   :string(30)
 #
 
 class User < ApplicationRecord
+  acts_as_token_authenticatable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :order
+  has_many :orders
+  has_many :payments
 end

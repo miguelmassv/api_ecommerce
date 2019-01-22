@@ -1,4 +1,6 @@
 class V1::RestaurantsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @restaurants = Restaurant.all
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_20_182746) do
+ActiveRecord::Schema.define(version: 2019_01_21_215019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2019_01_20_182746) do
     t.bigint "product_id"
     t.bigint "order_id"
     t.decimal "unit_price"
+    t.decimal "total_price"
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_order_items_on_order_id"
@@ -40,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_01_20_182746) do
 
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "payment_method"
+    t.decimal "total"
     t.string "shipping_address"
     t.string "phone_number"
     t.bigint "restaurant_id"
@@ -49,6 +51,17 @@ ActiveRecord::Schema.define(version: 2019_01_20_182746) do
     t.datetime "updated_at", null: false
     t.index ["restaurant_id"], name: "index_orders_on_restaurant_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.string "payment_method"
+    t.bigint "order_id"
+    t.bigint "user_id"
+    t.decimal "total_ammount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_payments_on_order_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -80,6 +93,8 @@ ActiveRecord::Schema.define(version: 2019_01_20_182746) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "shipping_address"
+    t.string "authentication_token", limit: 30
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -90,6 +105,8 @@ ActiveRecord::Schema.define(version: 2019_01_20_182746) do
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "restaurants"
   add_foreign_key "orders", "users"
+  add_foreign_key "payments", "orders"
+  add_foreign_key "payments", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "restaurants"
 end
