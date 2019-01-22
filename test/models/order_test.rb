@@ -4,7 +4,7 @@
 #
 #  id               :bigint(8)        not null, primary key
 #  user_id          :bigint(8)
-#  payment_method   :integer
+#  total            :decimal(, )
 #  shipping_address :string
 #  phone_number     :string
 #  restaurant_id    :bigint(8)

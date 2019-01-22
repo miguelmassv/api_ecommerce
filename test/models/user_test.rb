@@ -11,6 +11,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  shipping_address       :string
+#  authentication_token   :string(30)
 #
 
 require 'test_helper'
