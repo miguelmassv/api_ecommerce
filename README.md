@@ -1,4 +1,5 @@
-Api con los siguientes servicios:
+## Api de una ecommerce con los siguientes servicios:
+
 -Servicio para listar los restaurantes.
 
 -Servicio para listar las categorías de un restaurante y sus respectivos productos.
