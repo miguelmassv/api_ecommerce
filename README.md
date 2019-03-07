@@ -12,8 +12,6 @@
 
 -Servicio para listar las ordenes hechas por un usuario.
 
-Check documentation for Postman tests in https://documenter.getpostman.com/view/3875340/RztfuWoL
-
 
 ## Para correr localmente
 
@@ -42,3 +40,9 @@ Check documentation for Postman tests in https://documenter.getpostman.com/view/
    ```
    https://documenter.getpostman.com/view/3875340/RztfuWoL
    ```
+   
+   
+   ruby version 2.5.1
+   
+   rails version 5.2.2
+   
