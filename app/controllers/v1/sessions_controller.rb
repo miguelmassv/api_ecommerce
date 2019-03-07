@@ -2,6 +2,7 @@ class V1::SessionsController < ApplicationController
 
   def log_in
     @user = User.where(email: params[:email]).last
+    byebug
 
     if @user && @user.valid_password?(params[:password])
       render status: :created
